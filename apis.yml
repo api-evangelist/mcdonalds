@@ -1,5 +1,6 @@
 aid: mcdonalds
-url: https://raw.githubusercontent.com/api-evangelist/mcdonalds/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/mcdonalds/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis:
   - aid: mcdonalds:mcdonalds-api
@@ -9,7 +10,8 @@ apis:
       - Restaurants
       - Ordering
       - Delivery
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.mcdonalds.com
     humanURL: https://developer.mcdonalds.com/
     properties:
@@ -18,4 +20,10 @@ apis:
       - url: openapi/mcdonalds-mcdonalds-api-openapi.yml
         type: OpenAPI
     description: >-
-      McDonald's provides partner APIs for ordering, delivery integration, menu data, and restaurant information. These APIs support delivery partners and technology integrations with McDonald's restaurants.
+      McDonald's provides partner APIs for ordering, delivery integration, menu data,
+      and restaurant information. These APIs support delivery partners and technology
+      integrations with McDonald's restaurants.
+description: >-
+  McDonald's is the world's leading global foodservice retailer, operating and franchising
+  fast food restaurants serving hamburgers, chicken, breakfast items, soft drinks,
+  milkshakes, and desserts in countries around the world.
