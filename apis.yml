@@ -1,17 +1,15 @@
 aid: mcdonalds
-url: 
-  https://raw.githubusercontent.com/api-evangelist/mcdonalds/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/mcdonalds/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis:
   - aid: mcdonalds:mcdonalds-api
     name: McDonald's API
     tags:
-      - Fast Food
-      - Restaurants
-      - Ordering
       - Delivery
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      - Fast Food
+      - Ordering
+      - Restaurants
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.mcdonalds.com
     humanURL: https://developer.mcdonalds.com/
     properties:
