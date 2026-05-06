@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,108 +9,109 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: McDonald's
 providerId: mcdonalds
-publisherName: McDonald's
-serviceCategory: API
+publisherName: McDonald's Corporation
+serviceCategory: Restaurant / Marketplace Integration
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Delivery
   - Fast Food
   - Ordering
   - Restaurants
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the McDonald's API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps shape for McDonald''s: bilateral partner integrations (delivery
+  marketplaces, POS, loyalty). Costs flow through partnership economics (per-order commission, per-store
+  technology fees) rather than per-API-call billing.'
+notes: |
+  No public per-API pricing. Meters represent partnership economic units (orders, stores, marketplace
+  commission) rather than API requests.
+sources:
+  - https://corporate.mcdonalds.com/
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Track per-channel order volume (drive-thru, mobile order, marketplace delivery, kiosk)
+      via the McDonald's Global Mobile App and POS analytics; reconcile marketplace orders against
+      DoorDash / Uber Eats / Grubhub partner statements.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Allocate by ownership (corporate-owned vs franchisee), market, and channel. For franchisees,
+      allocate technology and integration costs to the operating company; for marketplace orders, allocate
+      commission to the order's source channel.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Optimize per-order commission via direct-to-consumer (Mobile Order & Pay, MyMcDonald's
+      loyalty) where margin is higher than marketplace, negotiate marketplace rates at volume, and
+      consolidate POS / kiosk vendor count to reduce per-store technology spend.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Assign owners per channel (mobile, delivery, in-store) who track contribution margin
+      and review partnership terms with marketplaces annually.
 domains:
   - name: Understand Usage and Cost
     capabilities:
-      - Data Ingestion
       - Allocation
       - Reporting and Analytics
       - Anomaly Management
   - name: Quantify Business Value
     capabilities:
       - Planning and Estimating
-      - Forecasting
       - Budgeting
-      - Benchmarking
       - Unit Economics
   - name: Optimize Usage and Cost
     capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
       - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
   - name: Manage the FinOps Practice
     capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
       - Invoicing and Chargeback
       - Onboarding Workloads
-      - Intersecting Disciplines
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Partner Commission + Per-Store Technology Fees
   billingFrequency: Monthly
-  billingCurrency: USD
+  billingCurrency: USD (settlement varies by market)
   chargeCategories:
     - Usage
     - Purchase
-    - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
+    - Credit
 focusColumns:
-  ServiceName: McDonald's
-  ServiceCategory: Developer Tools / API
+  ServiceName: McDonald's Partner / Marketplace Integration
+  ServiceCategory: Restaurant Marketplace
   ProviderName: McDonald's
-  PublisherName: McDonald's
-  InvoiceIssuerName: McDonald's
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: McDonald's Corporation
+  InvoiceIssuerName: McDonald's Corporation
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: orders_processed
+    description: Orders processed through a given channel (mobile, drive-thru, kiosk, marketplace).
+    unit: order
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - channel
+      - market
+      - store
+  - name: marketplace_commission
+    description: Commission paid to delivery marketplaces per fulfilled order.
+    unit: USD
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
+      - marketplace
+      - market
+      - store
+  - name: stores_active
+    description: Active stores integrated with the relevant partner system.
+    unit: store-month
+    aggregation: avg
     dimensions:
-      - api
-      - endpoint
-      - tier
+      - market
+      - ownership
+      - partner
+  - name: loyalty_members_active
+    description: Active MyMcDonald's loyalty members in the period.
+    unit: member-month
+    aggregation: avg
+    dimensions:
+      - market
 apis:
   - name: McDonald's API
     baseURL: https://api.mcdonalds.com
@@ -121,11 +123,11 @@ apis:
     serviceName: McDonald's API
     serviceCategory: API
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
+  - name: Marketplace Commission per Order
+    metric: marketplace_commission / orders_processed
     target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
+  - name: Cost per Active Loyalty Member
+    metric: program_cost / loyalty_members_active
     target: TBD
 maintainers:
   - FN: Kin Lane

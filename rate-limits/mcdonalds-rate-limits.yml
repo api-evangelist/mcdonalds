@@ -4,85 +4,43 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: McDonald's
 providerId: mcdonalds
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Delivery
   - Fast Food
   - Ordering
   - Restaurants
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the McDonald's API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: McDonald's does not publish API rate limits because there is no public developer surface.
+  Any rate or concurrency limits live inside the partner integration agreement (delivery marketplace,
+  POS vendor, loyalty integration) and are not externally documented.
+notes: |
+  No public rate-limit documentation. Limits are bilateral and contract-scoped.
+sources:
+  - https://corporate.mcdonalds.com/
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
   serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
+  - name: Partner-scoped limit
+    scope: partner-contract
+    metric: varies
+    limit: 'partner-specific; not publicly documented'
     applies:
       - McDonald's API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - McDonald's API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - McDonald's API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - McDonald's API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - McDonald's API
+    notes: Rate limits are configured per partner contract (e.g. delivery marketplaces, POS vendors,
+      loyalty integrators) and visible to that partner's integration team.
 policies:
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+    description: Use exponential backoff with jitter on transient errors and honor Retry-After when
+      present.
+  - name: Idempotency
+    description: Use unique order / external transaction IDs on order creation and modification so retries
+      after timeout do not produce duplicate orders.
+  - name: Partner-Scoped Limits
+    description: Throughput, burst, and webhook delivery obligations are negotiated per partner and
+      documented in the partner integration agreement.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
