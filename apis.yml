@@ -4,44 +4,111 @@ description: >-
   McDonald's is the world's leading global foodservice retailer, operating
   and franchising fast food restaurants serving hamburgers, chicken, breakfast
   items, soft drinks, milkshakes, and desserts in countries around the world.
-  McDonald's offers partner APIs for ordering, delivery integration, menu
-  data, and restaurant information through its developer platform.
+  McDonald's does not operate a public developer program or publish open API
+  documentation. Its digital surface — the Global Mobile App, MyMcDonald's
+  Rewards loyalty, mobile order & pay, kiosks, and drive-thru personalization
+  — runs on internal platforms, and integrations with delivery marketplaces
+  (DoorDash, Uber Eats, Grubhub) and technology partners (Google Cloud,
+  Dynamic Yield) are bilateral and gated to approved partners and franchisees.
 type: Index
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/mcdonalds/refs/heads/main/apis.yml
 created: '2026-03-21'
-modified: '2026-04-28'
+modified: '2026-06-02'
 specificationVersion: '0.20'
 tags:
   - Delivery
   - Fast Food
+  - Loyalty
+  - Mobile Ordering
   - Ordering
   - Restaurants
 apis:
   - aid: mcdonalds:mcdonalds-api
     name: McDonald's API
     description: >-
-      McDonald's provides partner APIs for ordering, delivery integration,
-      menu data, and restaurant information. These APIs support delivery
-      partners and technology integrations with McDonald's restaurants and
-      are gated behind partner enrollment in the McDonald's developer
-      platform.
+      McDonald's does not expose a public, self-service API. Ordering,
+      delivery integration, menu data, loyalty, and restaurant information
+      flow through bilateral partner integrations rather than open developer
+      endpoints. The api.mcdonalds.com and developer.mcdonalds.com hosts do
+      not resolve to public documentation (both refuse connections as of the
+      profiling date). Any API access is negotiated per partnership with
+      delivery marketplaces, payment processors, loyalty integrators, and
+      franchisee technology vendors.
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.mcdonalds.com/
-    baseURL: https://api.mcdonalds.com
+    humanURL: https://corporate.mcdonalds.com/corpmcd/our-stories/digital.html
     tags:
       - Delivery
       - Fast Food
+      - Loyalty
+      - Mobile Ordering
       - Ordering
       - Restaurants
     properties:
-      - type: Documentation
-        url: https://developer.mcdonalds.com/
+      - type: x-status
+        url: https://corporate.mcdonalds.com/corpmcd/our-stories/digital.html
+        x-note: No public developer portal or open API documentation as of 2026-06.
+features:
+  - name: No Public Developer Program
+    description: >-
+      McDonald's publishes no open API documentation and offers no self-service
+      developer signup. Integration is bilateral and partner-gated.
+  - name: Global Mobile App
+    description: >-
+      McDonald's Global Mobile App delivers mobile order & pay, deals, and
+      MyMcDonald's Rewards on a unified platform spanning app, kiosk, and
+      loyalty surfaces, deployed across markets beginning in 2024.
+  - name: MyMcDonald's Rewards
+    description: >-
+      Loyalty program targeting 250M 90-day active members and $45B in annual
+      systemwide sales from loyalty members by the end of 2027.
+  - name: Drive-Thru Personalization
+    description: >-
+      Dynamic Yield powers personalized digital menu boards and automated
+      upselling across thousands of drive-thru lanes.
+  - name: Generative AI Platform
+    description: >-
+      Strategic Google Cloud partnership applying generative AI and Google
+      Distributed Cloud edge compute across restaurants for crew tools,
+      analytics, and customer experiences.
+useCases:
+  - name: Delivery Marketplace Listing
+    description: >-
+      Surfacing McDonald's menus, pricing, and fulfillment to consumers via
+      DoorDash, Uber Eats, and Grubhub through bilateral marketplace
+      integrations.
+  - name: Franchisee Restaurant Technology
+    description: >-
+      POS, kiosk, kitchen, and back-of-house systems integrated per franchisee
+      and market under McDonald's technology standards rather than a public API.
+integrations:
+  - name: Google Cloud
+    description: >-
+      Strategic partnership for cloud, edge (Google Distributed Cloud), and
+      generative AI across restaurants worldwide.
+  - name: Dynamic Yield
+    description: >-
+      Personalization engine driving drive-thru digital menu boards and
+      automated upsell recommendations.
+  - name: DoorDash
+    description: Delivery marketplace integration for on-demand fulfillment.
+  - name: Uber Eats
+    description: Delivery marketplace integration for on-demand fulfillment.
+  - name: Grubhub
+    description: Delivery marketplace integration for on-demand fulfillment.
 common:
   - type: Website
     url: https://www.mcdonalds.com
-  - type: Developer Portal
-    url: https://developer.mcdonalds.com/
+  - type: Corporate
+    url: https://corporate.mcdonalds.com
+  - type: Blog
+    url: https://medium.com/mcdonalds-technical-blog
+  - type: Plans
+    url: plans/mcdonalds-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/mcdonalds-rate-limits.yml
+  - type: FinOps
+    url: finops/mcdonalds-finops.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
