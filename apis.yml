@@ -23,6 +23,7 @@ tags:
   - Mobile Ordering
   - Ordering
   - Restaurants
+  - Fortune 500
 apis:
   - aid: mcdonalds:mcdonalds-api
     name: McDonald's API
