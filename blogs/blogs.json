@@ -1,0 +1,21 @@
+{
+  "repo": "mcdonalds",
+  "feeds": [
+    {
+      "source": "https://medium.com/feed/mcdonalds-technical-blog",
+      "feed_url": "https://medium.com/feed/mcdonalds-technical-blog",
+      "title": "",
+      "saved": 1,
+      "method": "feed"
+    },
+    {
+      "source": "https://corporate.mcdonalds.com",
+      "feed_url": "https://corporate.mcdonalds.com",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 6,
+  "fetched": "2026-06-14T20:42:17Z"
+}
