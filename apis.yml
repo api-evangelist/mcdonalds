@@ -34,6 +34,14 @@ tags:
   - Loyalty
   - Mobile Ordering
   - Ordering
+  - Restaurant
+  - Fortune 500
+tags_raw:
+  - Delivery
+  - Fast Food
+  - Loyalty
+  - Mobile Ordering
+  - Ordering
   - Restaurants
   - Fortune 500
 apis:
@@ -51,6 +59,13 @@ apis:
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://corporate.mcdonalds.com/corpmcd/our-stories/digital.html
     tags:
+      - Delivery
+      - Fast Food
+      - Loyalty
+      - Mobile Ordering
+      - Ordering
+      - Restaurant
+    tags_raw:
       - Delivery
       - Fast Food
       - Loyalty
