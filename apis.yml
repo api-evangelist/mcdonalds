@@ -11,6 +11,17 @@ description: >-
   (DoorDash, Uber Eats, Grubhub) and technology partners (Google Cloud,
   Dynamic Yield) are bilateral and gated to approved partners and franchisees.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
