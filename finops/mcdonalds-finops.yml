@@ -128,10 +128,8 @@ apis:
 unitEconomics:
   - name: Marketplace Commission per Order
     metric: marketplace_commission / orders_processed
-    target: TBD
   - name: Cost per Active Loyalty Member
     metric: program_cost / loyalty_members_active
-    target: TBD
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
