@@ -1,4 +1,4 @@
-# McDonald's (mcdonalds)
+# McDonald's
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,80 +66,100 @@
 
 McDonald's is the world's leading global foodservice retailer, operating and franchising fast food restaurants serving hamburgers, chicken, breakfast items, soft drinks, milkshakes, and desserts in countries around the world. McDonald's does not operate a public developer program or publish open API documentation. Its digital surface — the Global Mobile App, MyMcDonald's Rewards loyalty, mobile order & pay, kiosks, and drive-thru personalization — runs on internal platforms, and integrations with delivery marketplaces (DoorDash, Uber Eats, Grubhub) and technology partners (Google Cloud, Dynamic Yield) are bilateral and gated to approved partners and franchisees.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/mcdonalds/refs/heads/main/apis.yml)
+**Areas:** Delivery · Fast Food · Loyalty · Mobile Ordering · Ordering · Restaurant · Fortune 500
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## McDonald's on APIs.io
 
-## Tags:
+Everything profiled for McDonald's is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mcdonalds/](https://apis.io/providers/mcdonalds/)** — or go straight to one of the APIs or properties below.
 
- - Delivery, Fast Food, Loyalty, Mobile Ordering, Ordering, Restaurants
+### APIs (1)
 
-## Timestamps
+- [McDonald's API](https://apis.io/apis/mcdonalds/mcdonalds-api/) — McDonald's does not expose a public, self-service API. Ordering, delivery integration, menu data, loyalty, and restaurant information flow through bilateral…
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-06-02
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### McDonald's API
-McDonald's does not expose a public, self-service API. Ordering, delivery integration, menu data, loyalty, and restaurant information flow through bilateral partner integrations rather than open developer endpoints. The api.mcdonalds.com and developer.mcdonalds.com hosts do not resolve to public documentation (both refuse connections as of the profiling date). Any API access is negotiated per partnership with delivery marketplaces, payment processors, loyalty integrators, and franchisee technology vendors.
+#### Security (1)
 
-**Human URL:** [https://corporate.mcdonalds.com/corpmcd/our-stories/digital.html](https://corporate.mcdonalds.com/corpmcd/our-stories/digital.html)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags:
+- [Mcdonalds Domain Security](https://apis.io/security/mcdonalds/mcdonalds-domain-security/)
 
- - Delivery, Fast Food, Loyalty, Mobile Ordering, Ordering, Restaurants
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [x-status](https://corporate.mcdonalds.com/corpmcd/our-stories/digital.html) — No public developer portal or open API documentation as of 2026-06.
+- [Mcdonalds Plans Pricing](https://apis.io/plans/mcdonalds/mcdonalds-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
+
+Published request limits.
+
+- [Mcdonalds Rate Limits](https://apis.io/rate-limits/mcdonalds/mcdonalds-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Mcdonalds Finops](https://apis.io/finops/mcdonalds/mcdonalds-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.mcdonalds.com)
-- [Corporate](https://corporate.mcdonalds.com)
 - [Blog](https://medium.com/mcdonalds-technical-blog)
-- [Plans](plans/mcdonalds-plans-pricing.yml)
-- [RateLimits](rate-limits/mcdonalds-rate-limits.yml)
-- [FinOps](finops/mcdonalds-finops.yml)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| No Public Developer Program | McDonald's publishes no open API documentation and offers no self-service developer signup. Integration is bilateral and partner-gated. |
-| Global Mobile App | McDonald's Global Mobile App delivers mobile order & pay, deals, and MyMcDonald's Rewards on a unified platform spanning app, kiosk, and loyalty surfaces, deployed across markets beginning in 2024. |
-| MyMcDonald's Rewards | Loyalty program targeting 250M 90-day active members and $45B in annual systemwide sales from loyalty members by the end of 2027. |
-| Drive-Thru Personalization | Dynamic Yield powers personalized digital menu boards and automated upselling across thousands of drive-thru lanes. |
-| Generative AI Platform | Strategic Google Cloud partnership applying generative AI and Google Distributed Cloud edge compute across restaurants for crew tools, analytics, and customer experiences. |
+**Kin Score 6.6** — minimal · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 5.3 |
 
-| Name | Description |
-|------|-------------|
-| Delivery Marketplace Listing | Surfacing McDonald's menus, pricing, and fulfillment to consumers via DoorDash, Uber Eats, and Grubhub through bilateral marketplace integrations. |
-| Franchisee Restaurant Technology | POS, kiosk, kitchen, and back-of-house systems integrated per franchisee and market under McDonald's technology standards rather than a public API. |
+**Agent readiness 0.6** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Google Cloud | Strategic partnership for cloud, edge (Google Distributed Cloud), and generative AI across restaurants worldwide. |
-| Dynamic Yield | Personalization engine driving drive-thru digital menu boards and automated upsell recommendations. |
-| DoorDash | Delivery marketplace integration for on-demand fulfillment. |
-| Uber Eats | Delivery marketplace integration for on-demand fulfillment. |
-| Grubhub | Delivery marketplace integration for on-demand fulfillment. |
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
 
-## Plans, Rate Limits & FinOps
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mcdonalds/](https://apis.io/providers/mcdonalds/).
 
-Commercial-surface artifacts describing the partner-gated economics (no public per-API pricing).
+## How this profile is made
 
-- [Plans & Pricing](plans/mcdonalds-plans-pricing.yml)
-- [Rate Limits](rate-limits/mcdonalds-rate-limits.yml)
-- [FinOps](finops/mcdonalds-finops.yml)
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-## Maintainers
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for McDonald's: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-**FN:** Kin Lane
+## Open an issue
 
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mcdonalds/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
